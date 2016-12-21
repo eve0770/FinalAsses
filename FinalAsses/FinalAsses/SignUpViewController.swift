@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController{
 
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var ageText: UITextField!
+    @IBOutlet weak var genderText: UITextField!
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var descriptionText: UITextField!
 
+    @IBOutlet weak var cr8AccountButt: UIButton!
+    @IBOutlet weak var upd8Butt: UIButton!
     
     
+    
+    
+    var messageReceive = ""
+    
+    var ref = FIRDatabase.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
+        if messageReceive == "Login"
+        {
+            cr8AccountButt.isHidden = false
+            upd8Butt.isHidden = true
+        }
         
     }
 
@@ -26,20 +47,55 @@ class SignUpViewController: UIViewController{
     
     @IBAction func updateButton(_ sender: UIButton)
     {
-        //later change to delegate type
-        self.dismiss(animated: true, completion: nil)
+        
     }
 
 
     @IBAction func createAccountButton(_ sender: UIButton)
     {
-        let mc = self.storyboard?.instantiateViewController(withIdentifier: "MatchCandidate") as! MatchCandidateListViewController
-        present(mc, animated: true, completion: nil)
+        if emailText.text != "" || passwordText.text != "" || nameText.text != ""
+        {
+            FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: passwordText.text!) {(user, error) in
+                if error != nil
+                {
+                    print(error!)
+                }
+                
+                guard let uid = user?.uid else
+                {
+                    return
+                }
+                    let userReference = self.ref.child("users").child(uid)
+                    let userData = ["age": self.ageText.text!,
+                                    "description": self.descriptionText.text!,
+                                    "email": self.emailText.text!,
+                                    "gender": self.genderText.text!,
+                                    "name": self.nameText.text!,
+                                    "profilepic": ""]
+                    userReference.updateChildValues(userData, withCompletionBlock: { (err, ref) in
+                        if err != nil
+                        {
+                            print(err)
+                            return
+                        }
+                    let mc = self.storyboard?.instantiateViewController(withIdentifier: "MatchCandidate") as! MatchCandidateListViewController
+                    self.present(mc, animated: true, completion: nil)
+                    })
+                }
+                
+            }
+        
+        
+        
+        
+        
     }
+    
 
     @IBAction func backButton(_ sender: UIBarButtonItem)
     {
         let nav = navigationController
         nav?.popViewController(animated: true)
     }
+    
 }

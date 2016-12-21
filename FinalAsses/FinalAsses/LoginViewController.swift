@@ -33,6 +33,14 @@ class LoginViewController: UIViewController {
        performSegue(withIdentifier: "signUpSegue", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signUpSegue"
+        {
+            let destiSign = segue.destination as! SignUpViewController
+            destiSign.messageReceive = "Login"
+        }
+    }
+    
 
 }
 
