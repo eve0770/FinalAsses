@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpButton(_ sender: UIButton)
     {
+       performSegue(withIdentifier: "signUpSegue", sender: self)
     }
     
 

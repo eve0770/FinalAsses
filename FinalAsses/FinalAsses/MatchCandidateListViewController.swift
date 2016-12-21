@@ -23,12 +23,12 @@ class MatchCandidateListViewController: UIViewController {
     
     @IBAction func matchedListButt(_ sender: UIBarButtonItem)
     {
-        self.performSegue(withIdentifier: "ListMatchProfile", sender: self)
+        performSegue(withIdentifier: "ListMatchProfile", sender: self)
     }
 
-    @IBAction func ListProfile(_ sender: UIBarButtonItem)
+    @IBAction func ListProfileButt(_ sender: UIBarButtonItem)
     {
-        self.performSegue(withIdentifier: "ListProfile", sender: self)
+        performSegue(withIdentifier: "ListProfile", sender: self)
     }
     /*
     // MARK: - Navigation

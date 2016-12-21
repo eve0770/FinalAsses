@@ -20,6 +20,7 @@
 		AF4CD6111E0A3AFF00AFF957 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD6101E0A3AFF00AFF957 /* ProfileViewController.swift */; };
 		AF4CD6131E0A3B1700AFF957 /* MatchedProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD6121E0A3B1700AFF957 /* MatchedProfileViewController.swift */; };
 		AF4CD6151E0A3B3600AFF957 /* CandidateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD6141E0A3B3600AFF957 /* CandidateDetailViewController.swift */; };
+		AF4CD6171E0A536B00AFF957 /* MatchedProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD6161E0A536B00AFF957 /* MatchedProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		AF4CD6101E0A3AFF00AFF957 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AF4CD6121E0A3B1700AFF957 /* MatchedProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedProfileViewController.swift; sourceTree = "<group>"; };
 		AF4CD6141E0A3B3600AFF957 /* CandidateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateDetailViewController.swift; sourceTree = "<group>"; };
+		AF4CD6161E0A536B00AFF957 /* MatchedProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedProfileTableViewCell.swift; sourceTree = "<group>"; };
 		B19FE19C9FE9EAABC7645575 /* Pods-FinalAsses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalAsses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalAsses/Pods-FinalAsses.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				AF4CD60E1E0A39D500AFF957 /* MatchCandidateListTableViewCell.swift */,
+				AF4CD6161E0A536B00AFF957 /* MatchedProfileTableViewCell.swift */,
 			);
 			name = TableCell;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				TargetAttributes = {
 					AF4CD5ED1E0A1C5B00AFF957 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 887UUJEAD3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -257,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4CD6171E0A536B00AFF957 /* MatchedProfileTableViewCell.swift in Sources */,
 				AF4CD6111E0A3AFF00AFF957 /* ProfileViewController.swift in Sources */,
 				AF4CD60F1E0A39D500AFF957 /* MatchCandidateListTableViewCell.swift in Sources */,
 				AF4CD60B1E0A2A6700AFF957 /* SignUpViewController.swift in Sources */,
@@ -388,6 +393,7 @@
 			baseConfigurationReference = B19FE19C9FE9EAABC7645575 /* Pods-FinalAsses.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 887UUJEAD3;
 				INFOPLIST_FILE = FinalAsses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.calvin.kl.FinalAsses;
@@ -401,6 +407,7 @@
 			baseConfigurationReference = A71A3AD11BD9AA162F5E601D /* Pods-FinalAsses.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 887UUJEAD3;
 				INFOPLIST_FILE = FinalAsses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.calvin.kl.FinalAsses;
