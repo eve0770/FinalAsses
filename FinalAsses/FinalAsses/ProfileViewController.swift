@@ -10,14 +10,38 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+var frDBref : FIRDatabaseReference!
 
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userNameText: UITextField!
+    @IBOutlet weak var userAgeText: UITextField!
+    @IBOutlet weak var userGenderText: UITextField!
+    @IBOutlet weak var userEmailText: UITextField!
 
+    var ref : FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = FIRDatabase.database().reference()
+        fetchUserInfo()
         // Do any additional setup after loading the view.
     }
+    
+    func fetchUserInfo()
+    {
+       let newUser = User()
+        newUser.initWithCurrentUser{ () -> () in
+            self.userNameText.text = "\(newUser.name)"
+            self.userAgeText.text = "\(newUser.age)"
+            self.userEmailText.text = "\(newUser.email)"
+        }
+    }
+    
+
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,6 +81,10 @@ class ProfileViewController: UIViewController {
             popUp.addAction(noButton)
             popUp.addAction(yesButton)
             present(popUp, animated: true, completion: nil)
+        
+        
+        let nav = UINavigationController()
+        nav.popToRootViewController(animated: true)
             
         }
         

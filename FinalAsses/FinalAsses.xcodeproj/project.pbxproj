@@ -21,6 +21,8 @@
 		AF4CD6131E0A3B1700AFF957 /* MatchedProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD6121E0A3B1700AFF957 /* MatchedProfileViewController.swift */; };
 		AF4CD6151E0A3B3600AFF957 /* CandidateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD6141E0A3B3600AFF957 /* CandidateDetailViewController.swift */; };
 		AF4CD6171E0A536B00AFF957 /* MatchedProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD6161E0A536B00AFF957 /* MatchedProfileTableViewCell.swift */; };
+		AF4CD61D1E0A845D00AFF957 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD61C1E0A845D00AFF957 /* Users.swift */; };
+		AF4CD61F1E0A92A300AFF957 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4CD61E1E0A92A300AFF957 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		AF4CD6121E0A3B1700AFF957 /* MatchedProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedProfileViewController.swift; sourceTree = "<group>"; };
 		AF4CD6141E0A3B3600AFF957 /* CandidateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateDetailViewController.swift; sourceTree = "<group>"; };
 		AF4CD6161E0A536B00AFF957 /* MatchedProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedProfileTableViewCell.swift; sourceTree = "<group>"; };
+		AF4CD61C1E0A845D00AFF957 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		AF4CD61E1E0A92A300AFF957 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		B19FE19C9FE9EAABC7645575 /* Pods-FinalAsses.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalAsses.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalAsses/Pods-FinalAsses.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +127,8 @@
 		AF4CD6091E0A27F600AFF957 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AF4CD61C1E0A845D00AFF957 /* Users.swift */,
+				AF4CD61E1E0A92A300AFF957 /* CurrentUser.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 			files = (
 				AF4CD6171E0A536B00AFF957 /* MatchedProfileTableViewCell.swift in Sources */,
 				AF4CD6111E0A3AFF00AFF957 /* ProfileViewController.swift in Sources */,
+				AF4CD61F1E0A92A300AFF957 /* CurrentUser.swift in Sources */,
+				AF4CD61D1E0A845D00AFF957 /* Users.swift in Sources */,
 				AF4CD60F1E0A39D500AFF957 /* MatchCandidateListTableViewCell.swift in Sources */,
 				AF4CD60B1E0A2A6700AFF957 /* SignUpViewController.swift in Sources */,
 				AF4CD6131E0A3B1700AFF957 /* MatchedProfileViewController.swift in Sources */,

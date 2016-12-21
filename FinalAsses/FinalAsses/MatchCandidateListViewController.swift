@@ -7,19 +7,58 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+
 
 class MatchCandidateListViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+//        {
+//        didSet
+//        {
+//            tableView.dataSource = self
+//        }
+//    }
+    
+var users = [Users]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        frDBref = FIRDatabase.database().reference()
+        fetchUsersInfo()
+        
+    }
+    
+    func fetchUsersInfo()
+    {
+        FIRDatabase.database().reference().child("users").observe(.childAdded, with: {(snapshot) in
+            
+            
+            if let dictionary = snapshot.value as? [String: AnyObject]
+            {
+                
+                let user = Users()
+                user.setValuesForKeys(dictionary)
+                print(user.name!, user.age!)
+            }
+            
+//            let allUser = Users()
+//
+//            guard let timeDictionary = snapshot.value as? [String: AnyObject]
+//            else
+//            {
+//                return
+//            }
+//            let userUID = timeDictionary["name"]
+//            print("user found")
+//            print(snapshot)
+        }, withCancel: nil)
+    
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     @IBAction func matchedListButt(_ sender: UIBarButtonItem)
     {
@@ -30,14 +69,16 @@ class MatchCandidateListViewController: UIViewController {
     {
         performSegue(withIdentifier: "ListProfile", sender: self)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+//extension MatchCandidateListViewController : UITableViewDataSource
+//{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//}
