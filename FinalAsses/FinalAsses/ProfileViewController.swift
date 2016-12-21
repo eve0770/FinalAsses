@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
 
@@ -34,4 +37,34 @@ class ProfileViewController: UIViewController {
     {
         performSegue(withIdentifier: "ProfileEdit", sender: self)
     }
+    
+    @IBAction func signOutButton(_ sender: UIButton)
+    {
+       
+            let popUp = UIAlertController(title: "Log Out", message: "yes or no", preferredStyle: .alert)
+            let noButton = UIAlertAction(title: "NO", style: .cancel, handler: nil)
+            let yesButton = UIAlertAction(title: "YES", style: .default){ (action) in
+                do
+                {
+                    try FIRAuth.auth()?.signOut()
+                    
+                }
+                catch let logoutError {
+                    print(logoutError)
+                }
+                self.notifySuccessLogout()
+            }
+            popUp.addAction(noButton)
+            popUp.addAction(yesButton)
+            present(popUp, animated: true, completion: nil)
+            
+        }
+        
+    func notifySuccessLogout()
+        {
+            let UserLogoutNotification = Notification (name: Notification.Name(rawValue: "UserLogoutNotification"), object: nil, userInfo: nil)
+            NotificationCenter.default.post(UserLogoutNotification)
+        }
+
+
 }

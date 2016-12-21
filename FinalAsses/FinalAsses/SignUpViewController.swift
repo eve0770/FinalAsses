@@ -36,7 +36,20 @@ class SignUpViewController: UIViewController{
             cr8AccountButt.isHidden = false
             upd8Butt.isHidden = true
         }
+        else if messageReceive == "Profile"
+        {
+            cr8AccountButt.isHidden = true
+            upd8Butt.isHidden = false
+        }
         
+        
+        
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(UIViewController.dismissKeyboard()))
+        
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 
