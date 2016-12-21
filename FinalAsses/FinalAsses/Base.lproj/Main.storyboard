@@ -48,12 +48,16 @@
                                 <rect key="frame" x="166" y="458" width="42" height="30"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <segue destination="v9F-xX-WTh" kind="show" id="86z-yy-8SU"/>
+                                    <action selector="logInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vjo-Au-QGv"/>
+                                    <segue destination="v9F-xX-WTh" kind="show" identifier="MatchList" id="86z-yy-8SU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCB-qR-P81">
                                 <rect key="frame" x="159.5" y="569" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tt6-Uh-GBU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Have an Account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuL-f4-Q9I">
                                 <rect key="frame" x="93.5" y="516" width="187.5" height="21"/>
@@ -106,6 +110,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XCB-qR-P81" secondAttribute="bottom" constant="68" id="plh-bJ-hC6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="qtM-CP-DmV" id="Zrj-31-IYE"/>
+                        <outlet property="passwordText" destination="9Ca-Td-dgG" id="LBa-Nn-C5U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,9 +159,17 @@
                                 <items>
                                     <barButtonItem title="Candidate List" id="9oW-fX-qsU"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="CXO-MR-aGV"/>
-                                    <barButtonItem title="Matched List" id="Jd8-Vv-zl5"/>
+                                    <barButtonItem title="Matched List" id="Jd8-Vv-zl5">
+                                        <connections>
+                                            <action selector="matchedListButt:" destination="v9F-xX-WTh" id="lSE-0X-ioD"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="atq-es-CBB"/>
-                                    <barButtonItem title="Profile" id="fkR-zi-V73"/>
+                                    <barButtonItem title="Profile" id="fkR-zi-V73">
+                                        <connections>
+                                            <action selector="ListProfile:" destination="v9F-xX-WTh" id="wYc-OL-b6c"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -174,8 +190,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="z75-45-wv7" kind="show" id="eD3-AD-0kj"/>
-                        <segue destination="GVe-DY-4CP" kind="show" id="wdv-2b-CFe"/>
+                        <segue destination="z75-45-wv7" kind="show" identifier="ListMatchProfile" id="eD3-AD-0kj"/>
+                        <segue destination="GVe-DY-4CP" kind="show" identifier="ListProfile" id="wdv-2b-CFe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIE-1e-cIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,7 +262,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="GVe-DY-4CP" kind="show" id="ewP-o6-32i"/>
+                        <segue destination="GVe-DY-4CP" kind="show" identifier="MatchProfileProfile" id="ewP-o6-32i"/>
+                        <segue destination="v9F-xX-WTh" kind="show" identifier="MatchProfileList" id="QRH-gD-M3I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNa-p7-pa9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -518,8 +535,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="v9F-xX-WTh" kind="show" id="hmG-52-vk8"/>
-                        <segue destination="z75-45-wv7" kind="show" id="fQ5-cn-XEw"/>
+                        <segue destination="v9F-xX-WTh" kind="show" identifier="ProfileList" id="hmG-52-vk8"/>
+                        <segue destination="z75-45-wv7" kind="show" identifier="ProfileMatchProfile" id="fQ5-cn-XEw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prs-oR-61C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -710,8 +727,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fQ5-cn-XEw"/>
-        <segue reference="ewP-o6-32i"/>
-        <segue reference="hmG-52-vk8"/>
+        <segue reference="eD3-AD-0kj"/>
+        <segue reference="QRH-gD-M3I"/>
+        <segue reference="wdv-2b-CFe"/>
     </inferredMetricsTieBreakers>
 </document>

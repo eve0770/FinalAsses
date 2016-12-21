@@ -21,7 +21,15 @@ class MatchCandidateListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func matchedListButt(_ sender: UIBarButtonItem)
+    {
+        self.performSegue(withIdentifier: "ListMatchProfile", sender: self)
+    }
 
+    @IBAction func ListProfile(_ sender: UIBarButtonItem)
+    {
+        self.performSegue(withIdentifier: "ListProfile", sender: self)
+    }
     /*
     // MARK: - Navigation
 
